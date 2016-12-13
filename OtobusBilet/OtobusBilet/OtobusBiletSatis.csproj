@@ -1,0 +1,413 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A4F1DE70-7A74-4C8D-8236-A3E407DC18EC}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>OtobusBiletSatis</RootNamespace>
+    <AssemblyName>2015-02-20-OtobusBilet</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net40\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="content\css\alert.css" />
+    <Content Include="content\css\reset.css" />
+    <Content Include="content\css\style.css" />
+    <Content Include="content\images\pano\pano %281%29.png" />
+    <Content Include="content\images\pano\pano.png" />
+    <Content Include="content\images\sablon\AnasayfaContentBack.png" />
+    <Content Include="content\images\sablon\AnasayfaMenuBack.png" />
+    <Content Include="content\images\sablon\background.jpg" />
+    <Content Include="content\images\sablon\baslikBack.png" />
+    <Content Include="content\images\sablon\BG-Header.png" />
+    <Content Include="content\images\sablon\buton.png" />
+    <Content Include="content\images\sablon\buton2.png" />
+    <Content Include="content\images\sablon\buton3.png" />
+    <Content Include="content\images\sablon\calanderOK.png" />
+    <Content Include="content\images\sablon\calender.gif" />
+    <Content Include="content\images\sablon\dil\bm.png" />
+    <Content Include="content\images\sablon\dil\eng.png" />
+    <Content Include="content\images\sablon\dil\tr.png" />
+    <Content Include="content\images\sablon\cagri.png" />
+    <Content Include="content\images\sablon\favicon.ico" />
+    <Content Include="content\images\sablon\footer.png" />
+    <Content Include="content\images\sablon\header-back.png" />
+    <Content Include="content\images\sablon\iletisimm.PNG" />
+    <Content Include="content\images\sablon\logo.png" />
+    <Content Include="content\images\sablon\otobus\arka.png" />
+    <Content Include="content\images\sablon\otobus\back.png" />
+    <Content Include="content\images\sablon\otobus\koltuk\bos.png" />
+    <Content Include="content\images\sablon\otobus\koltuk\cinsiyet\adca.png" />
+    <Content Include="content\images\sablon\otobus\koltuk\cinsiyet\bay.png" />
+    <Content Include="content\images\sablon\otobus\koltuk\cinsiyet\bayan.png" />
+    <Content Include="content\images\sablon\otobus\koltuk\cinsiyet\sd.png" />
+    <Content Include="content\images\sablon\otobus\koltuk\cinsiyet\sdd.png" />
+    <Content Include="content\images\sablon\otobus\koltuk\cinsiyet\sds.png" />
+    <Content Include="content\images\sablon\otobus\on.png" />
+    <Content Include="content\images\sablon\sosyalAglar\facebook.png" />
+    <Content Include="content\images\sablon\sosyalAglar\google.png" />
+    <Content Include="content\images\sablon\sosyalAglar\linkedin.png" />
+    <Content Include="content\images\sablon\sosyalAglar\twitter.png" />
+    <Content Include="content\images\sablon\travel_bus.png" />
+    <Content Include="content\images\site\basvuru.jpg" />
+    <Content Include="content\images\site\calis.jpg" />
+    <Content Include="content\images\site\free.jpg" />
+    <Content Include="content\images\site\IK.gif" />
+    <Content Include="content\images\site\ik.png" />
+    <Content Include="content\images\site\ik3.jpg" />
+    <Content Include="content\images\site\ikiletisim.jpg" />
+    <Content Include="content\images\site\itx-survey.JPG" />
+    <Content Include="content\images\site\misyon.png" />
+    <Content Include="content\images\site\not1.jpg" />
+    <Content Include="content\images\site\res_ik1.jpg" />
+    <Content Include="content\images\site\shatirlat.png" />
+    <Content Include="content\images\site\siz.png" />
+    <Content Include="content\images\varliklar\1.jpg" />
+    <Content Include="content\images\varliklar\3.jpg" />
+    <Content Include="content\images\varliklar\aa %281%29.png" />
+    <Content Include="content\images\varliklar\aa.png" />
+    <Content Include="content\images\varliklar\shadow-slide2.png" />
+    <Content Include="content\images\varliklar\Template.png" />
+    <Content Include="content\images\varliklar\Template1.png" />
+    <Content Include="content\js\jquery-1.11.2.min.js" />
+    <Content Include="content\js\site.js" />
+    <Content Include="content\plugin\datepicker\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="content\plugin\datepicker\images\ui-icons_222222_256x240.png" />
+    <Content Include="content\plugin\datepicker\jquery-ui-datepicker.css" />
+    <Content Include="content\plugin\datepicker\jquery-ui-datepicker.js" />
+    <Content Include="content\plugin\datepicker\orginal\jquery-ui-datepicker.css" />
+    <Content Include="content\plugin\datepicker\orginal\jquery-ui-datepicker.js" />
+    <Content Include="Default.aspx" />
+    <Content Include="Hakkimizda.aspx" />
+    <Content Include="Iletisim.aspx" />
+    <Content Include="login\Login.aspx" />
+    <Content Include="login\UyeOl.aspx" />
+    <Content Include="InsanKaynaklari.aspx" />
+    <Content Include="BiletIslemleri.aspx" />
+    <Content Include="Biletlerim.aspx" />
+    <Content Include="login\BenimSayfam.aspx" />
+    <Content Include="login\SifremiUnuttum.aspx" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="adres.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="basvurular.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="bilet.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="calisan.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="calisanKullanici.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="calisanPozisyon.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="cGenel.cs" />
+    <Compile Include="guzergah.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="guzergahDurak.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="guzergahMola.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ilce.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="koltuk.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="mahalle.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="master\menulu.master.cs">
+      <DependentUpon>menulu.master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\menulu.master.designer.cs">
+      <DependentUpon>menulu.master</DependentUpon>
+    </Compile>
+    <Compile Include="master\site.Master.cs">
+      <DependentUpon>site.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="master\site.Master.designer.cs">
+      <DependentUpon>site.Master</DependentUpon>
+    </Compile>
+    <Compile Include="login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login\UyeOl.aspx.cs">
+      <DependentUpon>UyeOl.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login\UyeOl.aspx.designer.cs">
+      <DependentUpon>UyeOl.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InsanKaynaklari.aspx.cs">
+      <DependentUpon>InsanKaynaklari.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InsanKaynaklari.aspx.designer.cs">
+      <DependentUpon>InsanKaynaklari.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="BiletIslemleri.aspx.cs">
+      <DependentUpon>BiletIslemleri.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="BiletIslemleri.aspx.designer.cs">
+      <DependentUpon>BiletIslemleri.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Biletlerim.aspx.cs">
+      <DependentUpon>Biletlerim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Biletlerim.aspx.designer.cs">
+      <DependentUpon>Biletlerim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="login\BenimSayfam.aspx.cs">
+      <DependentUpon>BenimSayfam.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login\BenimSayfam.aspx.designer.cs">
+      <DependentUpon>BenimSayfam.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="molaTesis.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="musteri.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="otobus.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="otobusEntityModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>otobusEntityModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="otobusEntityModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="otobusEntityModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>otobusEntityModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="otobusMarka.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="otobusModel.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Hakkimizda.aspx.cs">
+      <DependentUpon>Hakkimizda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hakkimizda.aspx.designer.cs">
+      <DependentUpon>Hakkimizda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Iletisim.aspx.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Iletisim.aspx.designer.cs">
+      <DependentUpon>Iletisim.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="sefer.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="seferCalisan.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sehir.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_seferDetaylariGetir_Result.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_seferDetaylariGetir_Result1.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sp_seferGetirByGuzergahAndTarih_Result.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sube.cs">
+      <DependentUpon>otobusEntityModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="login\SifremiUnuttum.aspx.cs">
+      <DependentUpon>SifremiUnuttum.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="login\SifremiUnuttum.aspx.designer.cs">
+      <DependentUpon>SifremiUnuttum.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="otobusEntityModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>otobusEntityModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="otobusEntityModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>otobusEntityModel.edmx</DependentUpon>
+      <LastGenOutput>otobusEntityModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="otobusEntityModel.edmx.diagram">
+      <DependentUpon>otobusEntityModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="otobusEntityModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>otobusEntityModel.edmx</DependentUpon>
+      <LastGenOutput>otobusEntityModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="packages.config" />
+    <Content Include="master\menulu.master" />
+    <Content Include="master\site.Master" />
+    <Content Include="content\css\less\alert.less" />
+    <Content Include="content\css\less\desktop.ini" />
+    <Content Include="content\css\less\reset.less" />
+    <Content Include="content\css\less\style.less" />
+    <Content Include="content\images\desktop.ini" />
+    <Content Include="content\images\musteri\desktop.ini" />
+    <Content Include="content\images\musteri\profil\desktop.ini" />
+    <Content Include="content\images\pano\desktop.ini" />
+    <Content Include="content\images\sablon\desktop.ini" />
+    <Content Include="content\images\sablon\dil\desktop.ini" />
+    <Content Include="content\images\sablon\otobus\desktop.ini" />
+    <Content Include="content\images\sablon\otobus\koltuk\cinsiyet\desktop.ini" />
+    <Content Include="content\images\sablon\otobus\koltuk\desktop.ini" />
+    <Content Include="content\images\sablon\sosyalAglar\desktop.ini" />
+    <Content Include="content\images\site\desktop.ini" />
+    <Content Include="content\images\site\Thumbs.db" />
+    <Content Include="content\images\varliklar\aa.psd" />
+    <Content Include="content\images\varliklar\cinsiyet.psd" />
+    <Content Include="content\images\varliklar\desktop.ini" />
+    <Content Include="content\images\varliklar\ss.psd" />
+    <Content Include="content\js\desktop.ini" />
+    <Content Include="content\plugin\datepicker\desktop.ini" />
+    <Content Include="content\plugin\datepicker\images\desktop.ini" />
+    <Content Include="content\plugin\datepicker\jquery-ui-datepicker.less" />
+    <Content Include="content\plugin\datepicker\orginal\desktop.ini" />
+    <Content Include="content\plugin\desktop.ini" />
+    <None Include="Properties\PublishProfiles\ibrahim.pubxml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:50991/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

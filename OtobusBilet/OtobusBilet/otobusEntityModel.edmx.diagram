@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="2.0" xmlns:edmx="http://schemas.microsoft.com/ado/2008/10/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="57ad1ad9210e40ecb4fd0458bf7d985f" Name="Diagram1" ZoomLevel="86">
+        <EntityTypeShape EntityType="otobusModel.adres" Width="1.5" PointX="0.75" PointY="12.125" />
+        <EntityTypeShape EntityType="otobusModel.basvurular" Width="1.5" PointX="7.75" PointY="5.25" />
+        <EntityTypeShape EntityType="otobusModel.bilet" Width="1.5" PointX="10.5" PointY="15.25" />
+        <EntityTypeShape EntityType="otobusModel.calisan" Width="1.5" PointX="5.25" PointY="11.625" />
+        <EntityTypeShape EntityType="otobusModel.calisanKullanici" Width="1.5" PointX="7.5" PointY="19.875" />
+        <EntityTypeShape EntityType="otobusModel.calisanPozisyon" Width="1.5" PointX="3" PointY="11.625" />
+        <EntityTypeShape EntityType="otobusModel.guzergah" Width="1.5" PointX="3" PointY="7.75" />
+        <EntityTypeShape EntityType="otobusModel.guzergahDurak" Width="1.5" PointX="5.25" PointY="26" />
+        <EntityTypeShape EntityType="otobusModel.guzergahMola" Width="1.5" PointX="5.25" PointY="22.875" />
+        <EntityTypeShape EntityType="otobusModel.ilce" Width="1.5" PointX="8" PointY="2.375" />
+        <EntityTypeShape EntityType="otobusModel.koltuk" Width="1.5" PointX="5.25" PointY="18.375" />
+        <EntityTypeShape EntityType="otobusModel.mahalle" Width="1.5" PointX="10.25" PointY="2.5" />
+        <EntityTypeShape EntityType="otobusModel.molaTesis" Width="1.5" PointX="3" PointY="22.625" />
+        <EntityTypeShape EntityType="otobusModel.musteri" Width="1.5" PointX="3" PointY="17.375" />
+        <EntityTypeShape EntityType="otobusModel.otobus" Width="1.5" PointX="3" PointY="4.5" />
+        <EntityTypeShape EntityType="otobusModel.otobusMarka" Width="1.5" PointX="1.5" PointY="0.75" />
+        <EntityTypeShape EntityType="otobusModel.otobusModel" Width="1.5" PointX="0.75" PointY="4.5" />
+        <EntityTypeShape EntityType="otobusModel.sefer" Width="1.5" PointX="5.25" PointY="5.875" />
+        <EntityTypeShape EntityType="otobusModel.seferCalisan" Width="1.5" PointX="7.5" PointY="13.375" />
+        <EntityTypeShape EntityType="otobusModel.sehir" Width="1.5" PointX="5.75" PointY="2.5" />
+        <AssociationConnector Association="otobusModel.FK_calisan_adres" />
+        <AssociationConnector Association="otobusModel.FK_molaTesis_adres" />
+        <AssociationConnector Association="otobusModel.FK_musteri_adres" />
+        <AssociationConnector Association="otobusModel.FK_bilet_calisan" />
+        <AssociationConnector Association="otobusModel.FK_bilet_musteri" />
+        <AssociationConnector Association="otobusModel.FK_bilet_sefer" />
+        <AssociationConnector Association="otobusModel.FK_calisan_calisanPozisyon" />
+        <AssociationConnector Association="otobusModel.FK_calisanKullanici_calisan" />
+        <AssociationConnector Association="otobusModel.FK_seferCalisan_calisan" />
+        <AssociationConnector Association="otobusModel.FK_guzergahDurak_guzergah" />
+        <AssociationConnector Association="otobusModel.FK_guzergahMola_guzergah" />
+        <AssociationConnector Association="otobusModel.FK_sefer_guzergah" />
+        <AssociationConnector Association="otobusModel.FK_guzergahMola_molaTesis" />
+        <AssociationConnector Association="otobusModel.FK_ilce_sehir1" />
+        <AssociationConnector Association="otobusModel.FK_mahalle_ilce1" />
+        <AssociationConnector Association="otobusModel.FK_koltuk_musteri" />
+        <AssociationConnector Association="otobusModel.FK_koltuk_sefer2" />
+        <AssociationConnector Association="otobusModel.FK_otobus_otobusModel" />
+        <AssociationConnector Association="otobusModel.FK_sefer_otobus" />
+        <AssociationConnector Association="otobusModel.FK_otobusModel_otobusMarka" />
+        <AssociationConnector Association="otobusModel.FK_seferCalisan_sefer" />
+        <EntityTypeShape EntityType="otobusModel.sube" Width="1.5" PointX="3" PointY="26.125" />
+        <AssociationConnector Association="otobusModel.FK_sube_adres" />
+        <AssociationConnector Association="otobusModel.FK_calisan_sube" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

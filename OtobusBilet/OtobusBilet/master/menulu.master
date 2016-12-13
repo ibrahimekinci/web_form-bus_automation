@@ -1,0 +1,41 @@
+﻿<%@ Master Language="C#" MasterPageFile="/master/site.Master" AutoEventWireup="true" CodeBehind="menulu.master.cs" Inherits="OtobusBiletSatis.NestedMasterPage1" %>
+
+<asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <asp:ContentPlaceHolder ID="headAlt" runat="server">
+    </asp:ContentPlaceHolder>
+</asp:Content>
+<asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
+    <div id="content">
+        <div class="clear"></div>
+        <div id="biletSolMenu">
+  
+    <asp:UpdatePanel ID="upSolMenu" runat="server" UpdateMode="Always"> 
+        <ContentTemplate>
+          <div id="divLoginOff" runat="server">
+                <ul>
+                    <li><a href="/login/login.aspx">Üye Giriş</a></li>
+                    <li><a href="/login/uyeOl.aspx">Üye Ol</a></li>
+                    <li><a href="/BiletIslemleri.aspx">Bilet Satın Al</a></li>
+                    <li><a href="/Biletlerim.aspx">Biletlerim</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            <div id="divLoginOn" runat="server">
+                <ul>
+                    <li><a href="/BiletIslemleri.aspx">Bilet Satın Al</a></li>
+                    <li><a href="/Biletlerim.aspx">Biletlerim</a></li>
+                </ul>
+                <div class="clear"></div>
+            </div>
+            </ContentTemplate>
+    </asp:UpdatePanel>
+     
+        </div>
+        <div id="biletContent">
+            <asp:ContentPlaceHolder ID="bilet" runat="server">
+            </asp:ContentPlaceHolder>
+
+        </div>
+        <div class="clear"></div>
+    </div>
+</asp:Content>

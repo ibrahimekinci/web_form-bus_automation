@@ -1,0 +1,647 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="otobusModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="adres">
+    <Key>
+      <PropertyRef Name="adresID" />
+    </Key>
+    <Property Name="adresID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sehirID" Type="int" />
+    <Property Name="ilceID" Type="int" />
+    <Property Name="mahalleID" Type="int" />
+    <Property Name="aciklama" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="basvurular">
+    <Key>
+      <PropertyRef Name="basvuruid" />
+    </Key>
+    <Property Name="basvuruid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad_soyad" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="dogumyeri" Type="varchar" MaxLength="50" />
+    <Property Name="dogumtarihi" Type="datetime" Nullable="false" />
+    <Property Name="medenihal" Type="varchar" MaxLength="10" />
+    <Property Name="tel" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="mail" Type="varchar" MaxLength="50" />
+    <Property Name="ikametadresi" Type="varchar(max)" Nullable="false" />
+    <Property Name="kısabilgi" Type="varchar(max)" Nullable="false" />
+    <Property Name="dosya" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="bilet">
+    <Key>
+      <PropertyRef Name="biletID" />
+    </Key>
+    <Property Name="biletID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="seferID" Type="int" Nullable="false" />
+    <Property Name="musteriID" Type="int" Nullable="false" />
+    <Property Name="islem" Type="bit" Nullable="false" />
+    <Property Name="ucret" Type="money" Nullable="false" />
+    <Property Name="CalisanID" Type="int" Nullable="false" />
+    <Property Name="alinmaTarihi" Type="datetime" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="calisan">
+    <Key>
+      <PropertyRef Name="calisanID" />
+    </Key>
+    <Property Name="calisanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="calisanPozisyonID" Type="int" Nullable="false" />
+    <Property Name="subeID" Type="int" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cinsiyet" Type="nvarchar" MaxLength="50" />
+    <Property Name="dogumTarihi" Type="datetime" Nullable="false" />
+    <Property Name="ehliyetSinifi" Type="nvarchar" MaxLength="5" />
+    <Property Name="ehliyetAlisTarihi" Type="datetime" />
+    <Property Name="telefon" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="adresID" Type="int" Nullable="false" />
+    <Property Name="girisTarihi" Type="datetime" Nullable="false" />
+    <Property Name="cikisTarihi" Type="datetime" />
+    <Property Name="maas" Type="money" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+    <Property Name="calisanTCKNO" Type="nvarchar" MaxLength="11" Nullable="false" />
+  </EntityType>
+  <EntityType Name="calisanKullanici">
+    <Key>
+      <PropertyRef Name="calisanKullanici" />
+    </Key>
+    <Property Name="calisanKullanici" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="calisanID" Type="int" Nullable="false" />
+    <Property Name="kadi" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="sifre" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="calisanPozisyon">
+    <Key>
+      <PropertyRef Name="calisanPozisyonID" />
+    </Key>
+    <Property Name="calisanPozisyonID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="guzergah">
+    <Key>
+      <PropertyRef Name="guzergahID" />
+    </Key>
+    <Property Name="guzergahID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="aciklama" Type="nvarchar(max)" />
+    <Property Name="EklenmeTarihi" Type="datetime" Nullable="false" />
+    <Property Name="durum" Type="bit" />
+  </EntityType>
+  <EntityType Name="guzergahDurak">
+    <Key>
+      <PropertyRef Name="guzergahDurakID" />
+    </Key>
+    <Property Name="guzergahDurakID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="guzergahID" Type="int" Nullable="false" />
+    <Property Name="subeID" Type="int" Nullable="false" />
+    <Property Name="sira" Type="int" Nullable="false" />
+    <Property Name="kilometre" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="guzergahMola">
+    <Key>
+      <PropertyRef Name="guzergahMolaID" />
+    </Key>
+    <Property Name="guzergahMolaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="molaTesisID" Type="int" Nullable="false" />
+    <Property Name="guzergahID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ilce">
+    <Key>
+      <PropertyRef Name="ilceID" />
+    </Key>
+    <Property Name="ilceID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="sehirID" Type="int" />
+    <Property Name="ad" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="koltuk">
+    <Key>
+      <PropertyRef Name="koltukID" />
+    </Key>
+    <Property Name="koltukID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="seferID" Type="int" Nullable="false" />
+    <Property Name="musteriID" Type="int" Nullable="false" />
+    <Property Name="guzergahDurakSira" Type="int" Nullable="false" />
+    <Property Name="koltukNo" Type="int" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="mahalle">
+    <Key>
+      <PropertyRef Name="mahalleID" />
+    </Key>
+    <Property Name="mahalleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ilceID" Type="int" />
+    <Property Name="ad" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="molaTesis">
+    <Key>
+      <PropertyRef Name="molaTesisID" />
+    </Key>
+    <Property Name="molaTesisID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="adresID" Type="int" Nullable="false" />
+    <Property Name="aciklama" Type="nvarchar(max)" />
+    <Property Name="EklenmeTarihi" Type="datetime" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="musteri">
+    <Key>
+      <PropertyRef Name="musteriID" />
+    </Key>
+    <Property Name="musteriID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="kadi" Type="nvarchar" MaxLength="50" />
+    <Property Name="pass" Type="nvarchar" MaxLength="50" />
+    <Property Name="tckn" Type="nvarchar" MaxLength="11" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="soyad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="cinsiyet" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="dogumTarihi" Type="datetime" Nullable="false" />
+    <Property Name="kayitTarihi" Type="datetime" Nullable="false" />
+    <Property Name="cepTelefonu" Type="nvarchar" MaxLength="20" />
+    <Property Name="evTelefonu" Type="nvarchar" MaxLength="20" />
+    <Property Name="eposta" Type="nvarchar" MaxLength="50" />
+    <Property Name="adresID" Type="int" Nullable="false" />
+    <Property Name="puan" Type="int" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="otobus">
+    <Key>
+      <PropertyRef Name="otobusID" />
+    </Key>
+    <Property Name="otobusID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="saseNumarasi" Type="nvarchar" MaxLength="30" />
+    <Property Name="plaka" Type="nvarchar" MaxLength="30" />
+    <Property Name="otobusModelID" Type="int" Nullable="false" />
+    <Property Name="uretimYili" Type="datetime" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="otobusMarka">
+    <Key>
+      <PropertyRef Name="otobusMarkaID" />
+    </Key>
+    <Property Name="otobusMarkaID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="aciklama" Type="nvarchar(max)" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="otobusModel">
+    <Key>
+      <PropertyRef Name="otobusModelID" />
+    </Key>
+    <Property Name="otobusModelID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="otobusMarkaID" Type="int" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="koltukSayisi" Type="int" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sefer">
+    <Key>
+      <PropertyRef Name="seferID" />
+    </Key>
+    <Property Name="seferID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="otobusID" Type="int" />
+    <Property Name="kalkisTarihi" Type="datetime" Nullable="false" />
+    <Property Name="guzergahID" Type="int" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+    <Property Name="yon" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="seferCalisan">
+    <Key>
+      <PropertyRef Name="seferCalisanID" />
+    </Key>
+    <Property Name="seferCalisanID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="seferID" Type="int" Nullable="false" />
+    <Property Name="calisanID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sehir">
+    <Key>
+      <PropertyRef Name="sehirID" />
+    </Key>
+    <Property Name="sehirID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="plaka" Type="nvarchar" MaxLength="255" />
+    <Property Name="ad" Type="nvarchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="sube">
+    <Key>
+      <PropertyRef Name="subeID" />
+    </Key>
+    <Property Name="subeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ad" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="adresID" Type="int" Nullable="false" />
+    <Property Name="acilisTarihi" Type="datetime" Nullable="false" />
+    <Property Name="durum" Type="bit" Nullable="false" />
+    <Property Name="telefon" Type="nvarchar" MaxLength="50" />
+    <Property Name="mail" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_bilet_calisan">
+    <End Role="calisan" Type="Self.calisan" Multiplicity="1" />
+    <End Role="bilet" Type="Self.bilet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="calisan">
+        <PropertyRef Name="calisanID" />
+      </Principal>
+      <Dependent Role="bilet">
+        <PropertyRef Name="CalisanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bilet_musteri">
+    <End Role="musteri" Type="Self.musteri" Multiplicity="1" />
+    <End Role="bilet" Type="Self.bilet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="musteri">
+        <PropertyRef Name="musteriID" />
+      </Principal>
+      <Dependent Role="bilet">
+        <PropertyRef Name="musteriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_bilet_sefer">
+    <End Role="sefer" Type="Self.sefer" Multiplicity="1" />
+    <End Role="bilet" Type="Self.bilet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sefer">
+        <PropertyRef Name="seferID" />
+      </Principal>
+      <Dependent Role="bilet">
+        <PropertyRef Name="seferID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_calisan_adres">
+    <End Role="adres" Type="Self.adres" Multiplicity="1" />
+    <End Role="calisan" Type="Self.calisan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adres">
+        <PropertyRef Name="adresID" />
+      </Principal>
+      <Dependent Role="calisan">
+        <PropertyRef Name="adresID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_calisan_calisanPozisyon">
+    <End Role="calisanPozisyon" Type="Self.calisanPozisyon" Multiplicity="1" />
+    <End Role="calisan" Type="Self.calisan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="calisanPozisyon">
+        <PropertyRef Name="calisanPozisyonID" />
+      </Principal>
+      <Dependent Role="calisan">
+        <PropertyRef Name="calisanPozisyonID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_calisan_sube">
+    <End Role="sube" Type="Self.sube" Multiplicity="1" />
+    <End Role="calisan" Type="Self.calisan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sube">
+        <PropertyRef Name="subeID" />
+      </Principal>
+      <Dependent Role="calisan">
+        <PropertyRef Name="subeID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_calisanKullanici_calisan">
+    <End Role="calisan" Type="Self.calisan" Multiplicity="1" />
+    <End Role="calisanKullanici" Type="Self.calisanKullanici" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="calisan">
+        <PropertyRef Name="calisanID" />
+      </Principal>
+      <Dependent Role="calisanKullanici">
+        <PropertyRef Name="calisanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_guzergahDurak_guzergah">
+    <End Role="guzergah" Type="Self.guzergah" Multiplicity="1" />
+    <End Role="guzergahDurak" Type="Self.guzergahDurak" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="guzergah">
+        <PropertyRef Name="guzergahID" />
+      </Principal>
+      <Dependent Role="guzergahDurak">
+        <PropertyRef Name="guzergahID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_guzergahMola_guzergah">
+    <End Role="guzergah" Type="Self.guzergah" Multiplicity="1" />
+    <End Role="guzergahMola" Type="Self.guzergahMola" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="guzergah">
+        <PropertyRef Name="guzergahID" />
+      </Principal>
+      <Dependent Role="guzergahMola">
+        <PropertyRef Name="guzergahID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_guzergahMola_molaTesis">
+    <End Role="molaTesis" Type="Self.molaTesis" Multiplicity="1" />
+    <End Role="guzergahMola" Type="Self.guzergahMola" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="molaTesis">
+        <PropertyRef Name="molaTesisID" />
+      </Principal>
+      <Dependent Role="guzergahMola">
+        <PropertyRef Name="molaTesisID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ilce_sehir1">
+    <End Role="sehir" Type="Self.sehir" Multiplicity="0..1" />
+    <End Role="ilce" Type="Self.ilce" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sehir">
+        <PropertyRef Name="sehirID" />
+      </Principal>
+      <Dependent Role="ilce">
+        <PropertyRef Name="sehirID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_koltuk_musteri">
+    <End Role="musteri" Type="Self.musteri" Multiplicity="1" />
+    <End Role="koltuk" Type="Self.koltuk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="musteri">
+        <PropertyRef Name="musteriID" />
+      </Principal>
+      <Dependent Role="koltuk">
+        <PropertyRef Name="musteriID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_koltuk_sefer2">
+    <End Role="sefer" Type="Self.sefer" Multiplicity="1" />
+    <End Role="koltuk" Type="Self.koltuk" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sefer">
+        <PropertyRef Name="seferID" />
+      </Principal>
+      <Dependent Role="koltuk">
+        <PropertyRef Name="seferID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_mahalle_ilce1">
+    <End Role="ilce" Type="Self.ilce" Multiplicity="0..1" />
+    <End Role="mahalle" Type="Self.mahalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ilce">
+        <PropertyRef Name="ilceID" />
+      </Principal>
+      <Dependent Role="mahalle">
+        <PropertyRef Name="ilceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_molaTesis_adres">
+    <End Role="adres" Type="Self.adres" Multiplicity="1" />
+    <End Role="molaTesis" Type="Self.molaTesis" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adres">
+        <PropertyRef Name="adresID" />
+      </Principal>
+      <Dependent Role="molaTesis">
+        <PropertyRef Name="adresID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_musteri_adres">
+    <End Role="adres" Type="Self.adres" Multiplicity="1" />
+    <End Role="musteri" Type="Self.musteri" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adres">
+        <PropertyRef Name="adresID" />
+      </Principal>
+      <Dependent Role="musteri">
+        <PropertyRef Name="adresID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_otobus_otobusModel">
+    <End Role="otobusModel" Type="Self.otobusModel" Multiplicity="1" />
+    <End Role="otobus" Type="Self.otobus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="otobusModel">
+        <PropertyRef Name="otobusModelID" />
+      </Principal>
+      <Dependent Role="otobus">
+        <PropertyRef Name="otobusModelID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_otobusModel_otobusMarka">
+    <End Role="otobusMarka" Type="Self.otobusMarka" Multiplicity="1" />
+    <End Role="otobusModel" Type="Self.otobusModel" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="otobusMarka">
+        <PropertyRef Name="otobusMarkaID" />
+      </Principal>
+      <Dependent Role="otobusModel">
+        <PropertyRef Name="otobusMarkaID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sefer_guzergah">
+    <End Role="guzergah" Type="Self.guzergah" Multiplicity="1" />
+    <End Role="sefer" Type="Self.sefer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="guzergah">
+        <PropertyRef Name="guzergahID" />
+      </Principal>
+      <Dependent Role="sefer">
+        <PropertyRef Name="guzergahID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sefer_otobus">
+    <End Role="otobus" Type="Self.otobus" Multiplicity="0..1" />
+    <End Role="sefer" Type="Self.sefer" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="otobus">
+        <PropertyRef Name="otobusID" />
+      </Principal>
+      <Dependent Role="sefer">
+        <PropertyRef Name="otobusID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_seferCalisan_calisan">
+    <End Role="calisan" Type="Self.calisan" Multiplicity="1" />
+    <End Role="seferCalisan" Type="Self.seferCalisan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="calisan">
+        <PropertyRef Name="calisanID" />
+      </Principal>
+      <Dependent Role="seferCalisan">
+        <PropertyRef Name="calisanID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_seferCalisan_sefer">
+    <End Role="sefer" Type="Self.sefer" Multiplicity="1" />
+    <End Role="seferCalisan" Type="Self.seferCalisan" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="sefer">
+        <PropertyRef Name="seferID" />
+      </Principal>
+      <Dependent Role="seferCalisan">
+        <PropertyRef Name="seferID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_sube_adres">
+    <End Role="adres" Type="Self.adres" Multiplicity="1" />
+    <End Role="sube" Type="Self.sube" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="adres">
+        <PropertyRef Name="adresID" />
+      </Principal>
+      <Dependent Role="sube">
+        <PropertyRef Name="adresID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="sp_guzergahUpdate" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="guzergahID" Type="int" Mode="In" />
+    <Parameter Name="guzergahAd" Type="nvarchar" Mode="In" />
+    <Parameter Name="guzergahAciklama" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_seferDetaylariGetir" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="guzergahID" Type="int" Mode="In" />
+    <Parameter Name="neredenSubeID" Type="int" Mode="In" />
+    <Parameter Name="nereyeSubeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_seferFiltreleByYon" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="guzergahID" Type="int" Mode="In" />
+    <Parameter Name="neredenSubeID" Type="int" Mode="In" />
+    <Parameter Name="nereyeSubeID" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_seferGetirByGuzergahAndTarih" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="neredenSubeID" Type="int" Mode="In" />
+    <Parameter Name="nereyeSubeID" Type="int" Mode="In" />
+    <Parameter Name="kalkisTarihi" Type="datetime" Mode="In" />
+  </Function>
+  <EntityContainer Name="otobusModelStoreContainer">
+    <EntitySet Name="adres" EntityType="Self.adres" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="basvurular" EntityType="Self.basvurular" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="bilet" EntityType="Self.bilet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="calisan" EntityType="Self.calisan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="calisanKullanici" EntityType="Self.calisanKullanici" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="calisanPozisyon" EntityType="Self.calisanPozisyon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="guzergah" EntityType="Self.guzergah" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="guzergahDurak" EntityType="Self.guzergahDurak" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="guzergahMola" EntityType="Self.guzergahMola" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ilce" EntityType="Self.ilce" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="koltuk" EntityType="Self.koltuk" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mahalle" EntityType="Self.mahalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="molaTesis" EntityType="Self.molaTesis" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="musteri" EntityType="Self.musteri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="otobus" EntityType="Self.otobus" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="otobusMarka" EntityType="Self.otobusMarka" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="otobusModel" EntityType="Self.otobusModel" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sefer" EntityType="Self.sefer" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="seferCalisan" EntityType="Self.seferCalisan" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sehir" EntityType="Self.sehir" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sube" EntityType="Self.sube" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_bilet_calisan" Association="Self.FK_bilet_calisan">
+      <End Role="calisan" EntitySet="calisan" />
+      <End Role="bilet" EntitySet="bilet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bilet_musteri" Association="Self.FK_bilet_musteri">
+      <End Role="musteri" EntitySet="musteri" />
+      <End Role="bilet" EntitySet="bilet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_bilet_sefer" Association="Self.FK_bilet_sefer">
+      <End Role="sefer" EntitySet="sefer" />
+      <End Role="bilet" EntitySet="bilet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_calisan_adres" Association="Self.FK_calisan_adres">
+      <End Role="adres" EntitySet="adres" />
+      <End Role="calisan" EntitySet="calisan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_calisan_calisanPozisyon" Association="Self.FK_calisan_calisanPozisyon">
+      <End Role="calisanPozisyon" EntitySet="calisanPozisyon" />
+      <End Role="calisan" EntitySet="calisan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_calisan_sube" Association="Self.FK_calisan_sube">
+      <End Role="sube" EntitySet="sube" />
+      <End Role="calisan" EntitySet="calisan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_calisanKullanici_calisan" Association="Self.FK_calisanKullanici_calisan">
+      <End Role="calisan" EntitySet="calisan" />
+      <End Role="calisanKullanici" EntitySet="calisanKullanici" />
+    </AssociationSet>
+    <AssociationSet Name="FK_guzergahDurak_guzergah" Association="Self.FK_guzergahDurak_guzergah">
+      <End Role="guzergah" EntitySet="guzergah" />
+      <End Role="guzergahDurak" EntitySet="guzergahDurak" />
+    </AssociationSet>
+    <AssociationSet Name="FK_guzergahMola_guzergah" Association="Self.FK_guzergahMola_guzergah">
+      <End Role="guzergah" EntitySet="guzergah" />
+      <End Role="guzergahMola" EntitySet="guzergahMola" />
+    </AssociationSet>
+    <AssociationSet Name="FK_guzergahMola_molaTesis" Association="Self.FK_guzergahMola_molaTesis">
+      <End Role="molaTesis" EntitySet="molaTesis" />
+      <End Role="guzergahMola" EntitySet="guzergahMola" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ilce_sehir1" Association="Self.FK_ilce_sehir1">
+      <End Role="sehir" EntitySet="sehir" />
+      <End Role="ilce" EntitySet="ilce" />
+    </AssociationSet>
+    <AssociationSet Name="FK_koltuk_musteri" Association="Self.FK_koltuk_musteri">
+      <End Role="musteri" EntitySet="musteri" />
+      <End Role="koltuk" EntitySet="koltuk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_koltuk_sefer2" Association="Self.FK_koltuk_sefer2">
+      <End Role="sefer" EntitySet="sefer" />
+      <End Role="koltuk" EntitySet="koltuk" />
+    </AssociationSet>
+    <AssociationSet Name="FK_mahalle_ilce1" Association="Self.FK_mahalle_ilce1">
+      <End Role="ilce" EntitySet="ilce" />
+      <End Role="mahalle" EntitySet="mahalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_molaTesis_adres" Association="Self.FK_molaTesis_adres">
+      <End Role="adres" EntitySet="adres" />
+      <End Role="molaTesis" EntitySet="molaTesis" />
+    </AssociationSet>
+    <AssociationSet Name="FK_musteri_adres" Association="Self.FK_musteri_adres">
+      <End Role="adres" EntitySet="adres" />
+      <End Role="musteri" EntitySet="musteri" />
+    </AssociationSet>
+    <AssociationSet Name="FK_otobus_otobusModel" Association="Self.FK_otobus_otobusModel">
+      <End Role="otobusModel" EntitySet="otobusModel" />
+      <End Role="otobus" EntitySet="otobus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_otobusModel_otobusMarka" Association="Self.FK_otobusModel_otobusMarka">
+      <End Role="otobusMarka" EntitySet="otobusMarka" />
+      <End Role="otobusModel" EntitySet="otobusModel" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sefer_guzergah" Association="Self.FK_sefer_guzergah">
+      <End Role="guzergah" EntitySet="guzergah" />
+      <End Role="sefer" EntitySet="sefer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sefer_otobus" Association="Self.FK_sefer_otobus">
+      <End Role="otobus" EntitySet="otobus" />
+      <End Role="sefer" EntitySet="sefer" />
+    </AssociationSet>
+    <AssociationSet Name="FK_seferCalisan_calisan" Association="Self.FK_seferCalisan_calisan">
+      <End Role="calisan" EntitySet="calisan" />
+      <End Role="seferCalisan" EntitySet="seferCalisan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_seferCalisan_sefer" Association="Self.FK_seferCalisan_sefer">
+      <End Role="sefer" EntitySet="sefer" />
+      <End Role="seferCalisan" EntitySet="seferCalisan" />
+    </AssociationSet>
+    <AssociationSet Name="FK_sube_adres" Association="Self.FK_sube_adres">
+      <End Role="adres" EntitySet="adres" />
+      <End Role="sube" EntitySet="sube" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

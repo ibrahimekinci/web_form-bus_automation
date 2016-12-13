@@ -1,0 +1,8 @@
+D:\_Sites\WissenAkademie\Wissen_Projeler_36ibrahimekinci\projeler\webOtobusBiletSatis\2015-02-20-OtobusBilet\2015-02-20-OtobusBilet\bin\2015-02-20-OtobusBilet.dll.config
+D:\_Sites\WissenAkademie\Wissen_Projeler_36ibrahimekinci\projeler\webOtobusBiletSatis\2015-02-20-OtobusBilet\2015-02-20-OtobusBilet\bin\2015-02-20-OtobusBilet.dll
+D:\_Sites\WissenAkademie\Wissen_Projeler_36ibrahimekinci\projeler\webOtobusBiletSatis\2015-02-20-OtobusBilet\2015-02-20-OtobusBilet\bin\2015-02-20-OtobusBilet.pdb
+D:\_Sites\WissenAkademie\Wissen_Projeler_36ibrahimekinci\projeler\webOtobusBiletSatis\2015-02-20-OtobusBilet\2015-02-20-OtobusBilet\bin\EntityFramework.dll
+D:\_Sites\WissenAkademie\Wissen_Projeler_36ibrahimekinci\projeler\webOtobusBiletSatis\2015-02-20-OtobusBilet\2015-02-20-OtobusBilet\bin\EntityFramework.xml
+D:\_Sites\WissenAkademie\Wissen_Projeler_36ibrahimekinci\projeler\webOtobusBiletSatis\2015-02-20-OtobusBilet\2015-02-20-OtobusBilet\obj\Release\OtobusBiletSatis.csprojResolveAssemblyReference.cache
+D:\_Sites\WissenAkademie\Wissen_Projeler_36ibrahimekinci\projeler\webOtobusBiletSatis\2015-02-20-OtobusBilet\2015-02-20-OtobusBilet\obj\Release\2015-02-20-OtobusBilet.dll
+D:\_Sites\WissenAkademie\Wissen_Projeler_36ibrahimekinci\projeler\webOtobusBiletSatis\2015-02-20-OtobusBilet\2015-02-20-OtobusBilet\obj\Release\2015-02-20-OtobusBilet.pdb
